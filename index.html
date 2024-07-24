@@ -1,474 +1,459 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Namhyeon Go">
-    <title>Namhyeon Go (Catswords)</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style type="text/css">
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-
-    <link href="features.css" rel="stylesheet">
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-<main>
-  <div class="container px-4 py-5" id="featured-3">
-     <h1 class="pb-2 border-bottom">Namhyeon Go (Catswords)</h1>
-	 <p>Hello. I am Namhyeon Go, leading a one-person software team known as Catswords in South Korea.</p>
-     <p>I develop and share a variety of open-source projects through GitHub, including frameworks, middleware, and sometimes debugging tools. My key projects include ReasonableFramework (based on PHP), WelsonJS (based on Windows ECMAScript, with C#), and Caterpillar Proxy (based on Python). Recently, I have been actively exploring and contributing to open technologies and protocols such as WebAssembly and ActivityPub.</p>
-     <p>Through my opensource work, I strive to make these technologies widely accessible to everyone, independent of any specific organizations or financial interests.</p>
-     <p>Sponsorship is vital for maintaining and enhancing the security standards and quality of my opensource projects while ensuring that I am not reliant on specific organizations or financial interests. Additionally, it enables me to stay current with the latest trends, ensuring that my projects meet the industry's evolving requirements. Sponsorship also helps me connect with a broader community.</p>
-     <p>If you are interested in exploring alternative sponsorship methods, please feel free.</p>
-	 <p><a href="https://github.com/sponsors/gnh1201" class="btn btn-primary">GitHub sponsors @gnh1201</a></p>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Opensource projects</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-window-stack"></i>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="About the Catswords Researh">
+        <meta name="author" content="Namhyeon Go">
+        <title>Namhyeon Go (Catswords)</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <style type="text/css">
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
+            @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+            }
+            .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
+            .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+            }
+            .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+            }
+            .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+            }
+            .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            }
+            .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+            }
+            .bd-mode-toggle {
+            z-index: 1500;
+            }
+            .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+            }
+        </style>
+        <link href="features.css" rel="stylesheet">
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="check2" viewBox="0 0 16 16">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            </symbol>
+            <symbol id="circle-half" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+            </symbol>
+            <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+            </symbol>
+            <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            </symbol>
+        </svg>
+        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+            <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+                id="bd-theme"
+                type="button"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-label="Toggle theme (auto)">
+                <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                    <use href="#circle-half"></use>
+                </svg>
+                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                        <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                            <use href="#sun-fill"></use>
+                        </svg>
+                        Light
+                        <svg class="bi ms-auto d-none" width="1em" height="1em">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                        <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                            <use href="#moon-stars-fill"></use>
+                        </svg>
+                        Dark
+                        <svg class="bi ms-auto d-none" width="1em" height="1em">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                        <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                            <use href="#circle-half"></use>
+                        </svg>
+                        Auto
+                        <svg class="bi ms-auto d-none" width="1em" height="1em">
+                            <use href="#check2"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
         </div>
-        <h3 class="fs-2 text-body-emphasis">WelsonJS</h3>
-        <p>WelsonJS - Build a Windows app on the Windows built-in JavaScript engine</p>
-        <a href="https://github.com/gnh1201/welsonjs" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-sign-turn-left"></i>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Caterpillar Proxy</h3>
-        <p>Caterpillar Proxy - The simple web debugging proxy (formerly, php-httpproxy)</p>
-        <a href="https://github.com/gnh1201/caterpillar" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <i class="bi bi-filetype-php"></i>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">ReasonableFramework</h3>
-        <p>ReasonableFramework is RVHM structured PHP framework. aka, RSF, VSPF, C-2020-018490</p>
-        <a href="https://github.com/gnh1201/reasonableFramework" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5" id="icon-grid">
-    <h2 class="pb-2 border-bottom">Technical coverage</h2>
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-cpu"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">WebAssembly</h3>
-          <p>WebAssembly is an most evolved technology based on a bytecode. I started the AsmNEXT team to research it at January 2022.</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-emoji-sunglasses"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Web Standards</h3>
-          <p>I worked for government agencies and social enterprises, NGOs, DDA/WCAG interested compliance groups, and SEO-based marketing firms. I am interested in the standards of HTML and CSS.</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-cpu"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Machine code</h3>
-          <p>I have encountered cases such as JavaScript, MSIL, P-Code(VBA), x86, 64, ARM, MIPS assembly, Dalvik Bytecode(Android), Industrial IL, LLVM, and the customized virtual machine code.</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-card-text"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">NLP</h3>
-          <p>I have conducted a study on the interconversion of natural language and pseudo-code (Like an IR code, Bytecode) for cybersecurity industry.</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-eye"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Computer Vision</h3>
-          <p>I have extensive experience in the field of computer vision, including real-time object tracking, real-time labeling, characters detection (OCR), and thermal imaging detection (integrating sensors and optical equipment).</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-cart"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Live e-commerce</h3>
-          <p>The open-source project utilizing JavaScript for system programming (e.g., WelsonJS, Caterpillar Proxy) is gaining attention from various e-commerce companies employing live broadcasting.</p>
-        </div>
-      </div>
-	  <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-shield-shaded"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Cybersecurity</h3>
-          <p>I have the capability to analyze incidents such as malware by encompassing experience in machine code, bytecode, networks, and infrastructure.</p>
-        </div>
-      </div>
-	  <div class="col d-flex align-items-start">
-        <div class="icon-square fs-5 px-2">
-          <i class="bi bi-reception-4"></i>
-        </div>
-        <div>
-          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Networks</h3>
-          <p>I am capable of handling complex network requirements on both Windows and Linux, and I have experience in debugging networks, as well as developing and commercializing TCP, UDP and HTTP proxies.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom">Achievements</h2>
-    <div class="row g-4 py-5">
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-cloud"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Awarded prize</h3>
-		  <ul>
-			 <li>Dec 2023, Gold prize, 2023 Opensource Development Contest</li>
-			 <li>Dec 2020, Excellence prize, Healthcare data use-case and idea contest, Korea Health Information Service (Foundation)</li>
-			 <li>Dec 2019, Association prize, Venture Incheon 2019, Incheon Venture Company Association</li>
-			 <li>Sep 2019, Participation prize, Korea Clinical Datathon, Korea National Enterprise for Clinical Trials</li>
-			 <li>Sep 2019, Bronze prize, Software competition, Korea National Open University</li>
-			 <li>Nov 2018, Participation prize, DoraHacks Hackathon, DoraHacks</li>
-			 <li>Oct 2018, Participation prize, 'Welcome to maker world' competition, Korea Economic Daily</li>
-			 <li>Aug 2018, Participation prize, 'Happy National Idea' competition, Uiseong-gun District Office(Gyeongsangbuk-do, Republic of Korea)</li>
-			 <li>Jun 2018, Bronze prize, KISA-NHBank-TheLoop Blockchain Hackathon, Korea Internet &amp; Security Agency</li>
-			 <li>Sep 2016/2017, Participation prize, Software competition, Korea National Open University</li>
-			 <li>Mar 2016, Grand prize, Airport service improvement proposal competition, Incheon International Airport</li>
-			 <li>Jan 2016, Selected company, Social Enterprise Grow-Up Program, Namdong-gu District Office (Incheon Metropolitan City)</li>
-			 <li>Sep 2014, Bronze prize, Polytechnic project competition, Korea Polytechnic 2 Incheon Colleage</li>
-		  </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row g-4 py-5">
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-cloud"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Study</h3>
-		  <ul class="unordered-list">
-			 <li>2020, Design and application of the IoT security threat pre-detection procedure based on power quality metering, Korea Society for Internet Information</li>
-			 <li>2016, A study on compress behavior information and compare similarity of malicious code via natural language processing, Korea Association of Information Systems</li>
-			 <li>2016, A study on enhance flash memory performance and digital evidence analysis using LKM in android devices, Korea Association of Information Systems</li>
-			 <li>2016, A study on finding correlation between IoT and signal intrusion, Korea Society of Computer Information</li>
-			 <li>2016, Attack of downloader vulnerability using SD card of Android, Korea Association of Information Systems</li>
-			 <li>2016, Classification and Allocation method of e-mail using possibility distribution and prediction, Korea Society of Computer Information</li>
-			 <li>2016, Event Inspection Technique for the advancement of Application Accessibility, Korean Institute of Communication Sciences</li>
-			 <li>2016, A Code Concealment Method using Java Reflection and Dynamic Loading in Android, Korea Institute of Information Security &amp; Cryptology</li>
-			 <li>2015, Java Automatic Identifier Renaming Technique and Protection Method, The Journal of the KICS</li>
-			 <li>2014, Code Obfuscation using Java Reflection and Exception in Android, Korea Society of Computer Information</li>
-		  </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row g-4 py-5">
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-cloud"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Media</h3>
-		  <ul class="unordered-list">
-			 <li>Apr 2022, "The AsmNext Team in South Korea joined Bytecode Alliance", Boannews (Korean Security News)</li>
-			 <li>Sep 2019, "Exclusive Interview: Our future goal is we're going to part of a new standard of the web accessibility", IssueMaker</li>
-			 <li>Jun 2018, "KISA and NH Bank, Held the 'Fintech X Blockchain' hackathon", IT Chosun</li>
-			 <li>Jun 2016, "Incheon International Airport, Held the award for those who publish a proposal to improve airport service", Incheon Daily/Joongbu Daily</li>
-			 <li>Dec 2011, "The attacker launched the campaign to distribute malware on the digital camera forum website in South Korea", DailySecu</li>
-		  </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom">Commercial projects</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-cloud"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Cloud serivces</h3>
-          <p>Monitoring and receive a response over 200 servers with the legacy(Windows 2k3) ~ modern(Windows 10 and latest Linux) (2020)</p>
-		  <p>
-			<span><i class="bi bi-person"></i> LS Global, Inc.</span>
-			<span><i class="bi bi-person"></i> Databean, Co., Ltd.</span>
-		  </p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-droplet-half"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Chemical</h3>
-          <p>Providing information suitable for mines, substrates and chemical properties for ceramics industry. (2019)</p>
-		  <p>
-		    <span><i class="bi bi-person"></i> Korea Institute of Ceramic Engineering and Technology</span>
-			<span><i class="bi bi-person"></i> Databean, Co., Ltd.</span>
-		  <p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-droplet-half"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Compliance</h3>
-          <p>Counterstrike solution for companies and institutions to respond to DDA(Disability Discrimination Act) (2016)</p>
-		  <p>
-		    <span><i class="bi bi-person"></i> Incheon International Airport</span>
-			<span><i class="bi bi-person"></i> Namdong-gu District Office (Incheon)</span>
-			<span><i class="bi bi-person"></i> Chunghyun Children Center (Incheon)</span>
-			<span><i class="bi bi-person"></i> JSMGlobal, Inc. (Incheon)</span>
-		  <p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-hammer"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Filetypes</h3>
-          <p>AI based experts system for file types including executable, non-executable, mobile apps, document, script, image, and unclassified file formats. (2005 ~ Now)</p>
-		  <p>
-		    <span><i class="bi bi-person"></i> Korea Internet & Security Agency (KISA)</span>
-			<span><i class="bi bi-person"></i> IBM Korea</span>
-			<span><i class="bi bi-person"></i> Bioden</span>
-			<span><i class="bi bi-person"></i> Wooricare</span>
-			<span><i class="bi bi-person"></i> The Spot</span>
-			<span><i class="bi bi-person"></i> Kangwon University</span>
-			<span><i class="bi bi-person"></i> Incheon Information Industry</span>
-			<span><i class="bi bi-person"></i> Korea Gas Corporation</span>
-			<span><i class="bi bi-person"></i>  Incheon Metropolitan Police Agency</span>
-		  <p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-share"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">Blockchain</h3>
-          <p>Developing with the Smart Contract, Bronze award, KISA-NHBank-TheLoop, Fintech X Blockchain Hackathon (2017~2019)</p>
-		  <p>
-		    <span><i class="bi bi-person"></i> NH(Nonghyup) Bank</span>
-			<span><i class="bi bi-person"></i> Korea Internet & Security Agency (KISA)</span>
-			<span><i class="bi bi-person"></i> The Loop</span>
-		  </p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-          <i class="bi bi-house-door"></i>
-        </div>
-        <div>
-          <h3 class="fs-2 text-body-emphasis">HR/Real Estate</h3>
-          <p>Human Resource search, Real Estate search and brokerage solutions. (2009~2012)</p>
-		  <p>
-		    <span><i class="bi bi-person"></i>  Icheon Information</span>
-		  </p>
-		  <p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom">Join me</h2>
-
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">Join me.</h2>
-        <p class="text-body-secondary">I am ready to dedicate all my experience to you.</p>
-      </div>
-
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-chat-dots"></i>
+        <main>
+            <div class="container px-4 py-5" id="featured-3">
+                <h1 class="pb-2 border-bottom">Namhyeon Go (Catswords)</h1>
+                <p>Hello. I am Namhyeon Go, leading a one-person software team known as Catswords in South Korea.</p>
+                <p>I develop and share a variety of open-source projects through GitHub, including frameworks, middleware, and sometimes debugging tools. My key projects include ReasonableFramework (based on PHP), WelsonJS (based on Windows ECMAScript, with C#), and Caterpillar Proxy (based on Python). Recently, I have been actively exploring and contributing to open technologies and protocols such as WebAssembly and ActivityPub.</p>
+                <p>Through my opensource work, I strive to make these technologies widely accessible to everyone, independent of any specific organizations or financial interests.</p>
+                <p>Sponsorship is vital for maintaining and enhancing the security standards and quality of my opensource projects while ensuring that I am not reliant on specific organizations or financial interests. Additionally, it enables me to stay current with the latest trends, ensuring that my projects meet the industry's evolving requirements. Sponsorship also helps me connect with a broader community.</p>
+                <p>If you are interested in exploring alternative sponsorship methods, please feel free.</p>
+                <p><a href="https://github.com/sponsors/gnh1201" class="btn btn-primary">GitHub sponsors @gnh1201</a></p>
             </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Catswords Colosseum</h4>
-            <p class="text-body-secondary">ActivityPub (Mastodon) based distributed social media service.</p>
-            <p><a href="https://catswords.social" class="btn btn-primary">Join</a></p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-microsoft-teams"></i>
+            <div class="b-example-divider"></div>
+            <div class="container px-4 py-5" id="featured-3">
+                <h2 class="pb-2 border-bottom">Opensource projects</h2>
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <div class="feature col">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                            <i class="bi bi-window-stack"></i>
+                        </div>
+                        <h3 class="fs-2 text-body-emphasis">WelsonJS</h3>
+                        <p>WelsonJS - Build a Windows app on the Windows built-in JavaScript engine</p>
+                        <a href="https://github.com/gnh1201/welsonjs" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
+                    </div>
+                    <div class="feature col">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                            <i class="bi bi-sign-turn-left"></i>
+                        </div>
+                        <h3 class="fs-2 text-body-emphasis">Caterpillar Proxy</h3>
+                        <p>Caterpillar Proxy - The simple web debugging proxy (formerly, php-httpproxy)</p>
+                        <a href="https://github.com/gnh1201/caterpillar" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
+                    </div>
+                    <div class="feature col">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                            <i class="bi bi-filetype-php"></i>
+                        </div>
+                        <h3 class="fs-2 text-body-emphasis">ReasonableFramework</h3>
+                        <p>ReasonableFramework is RVHM structured PHP framework. aka, RSF, VSPF, C-2020-018490</p>
+                        <a href="https://github.com/gnh1201/reasonableFramework" class="icon-link">Access to the source code</a> <i class="bi bi-box-arrow-up-right"></i>
+                    </div>
+                </div>
             </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Microsoft Teams</h4>
-            <p class="text-body-secondary">I prefer Microsoft Teams as my communication channel.</p>
-			<p><a href="https://teams.live.com/l/community/FEACHncAhq8ldnojAI" class="btn btn-primary">Join</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+            <div class="b-example-divider"></div>
+            <div class="container px-4 py-5" id="icon-grid">
+                <h2 class="pb-2 border-bottom">Technical coverage</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">WebAssembly</h3>
+                            <p>WebAssembly is an most evolved technology based on a bytecode. I started the AsmNEXT team to research it at January 2022.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-emoji-sunglasses"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Web Standards</h3>
+                            <p>I worked for government agencies and social enterprises, NGOs, DDA/WCAG interested compliance groups, and SEO-based marketing firms. I am interested in the standards of HTML and CSS.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Machine code</h3>
+                            <p>I have encountered cases such as JavaScript, MSIL, P-Code(VBA), x86, 64, ARM, MIPS assembly, Dalvik Bytecode(Android), Industrial IL, LLVM, and the customized virtual machine code.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-card-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">NLP</h3>
+                            <p>I have conducted a study on the interconversion of natural language and pseudo-code (Like an IR code, Bytecode) for cybersecurity industry.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Computer Vision</h3>
+                            <p>I have extensive experience in the field of computer vision, including real-time object tracking, real-time labeling, characters detection (OCR), and thermal imaging detection (integrating sensors and optical equipment).</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-cart"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Live e-commerce</h3>
+                            <p>The open-source project utilizing JavaScript for system programming (e.g., WelsonJS, Caterpillar Proxy) is gaining attention from various e-commerce companies employing live broadcasting.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-shield-shaded"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Cybersecurity</h3>
+                            <p>I have the capability to analyze incidents such as malware by encompassing experience in machine code, bytecode, networks, and infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square fs-5 px-2">
+                            <i class="bi bi-reception-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Networks</h3>
+                            <p>I am capable of handling complex network requirements on both Windows and Linux, and I have experience in debugging networks, as well as developing and commercializing TCP, UDP and HTTP proxies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b-example-divider"></div>
+            <div class="container px-4 py-5" id="hanging-icons">
+                <h2 class="pb-2 border-bottom">Achievements</h2>
+                <div class="row g-4 py-5">
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Awarded prize</h3>
+                            <ul>
+                                <li>Dec 2023, Gold prize, 2023 Opensource Developer Contest, National IT Industry Promotion Agency</li>
+                                <li>Dec 2020, Excellence prize, Healthcare data use-case and idea contest, Korea Health Information Service (Foundation)</li>
+                                <li>Dec 2019, Association prize, Venture Incheon 2019, Incheon Venture Company Association</li>
+                                <li>Sep 2019, Participation prize, Korea Clinical Datathon, Korea National Enterprise for Clinical Trials</li>
+                                <li>Sep 2019, Bronze prize, Software competition, Korea National Open University</li>
+                                <li>Nov 2018, Participation prize, DoraHacks Hackathon, DoraHacks</li>
+                                <li>Oct 2018, Participation prize, 'Welcome to maker world' competition, Korea Economic Daily</li>
+                                <li>Aug 2018, Participation prize, 'Happy National Idea' competition, Uiseong-gun District Office(Gyeongsangbuk-do, Republic of Korea)</li>
+                                <li>Jun 2018, Bronze prize, KISA-NHBank-TheLoop Blockchain Hackathon, Korea Internet &amp; Security Agency</li>
+                                <li>Sep 2016/2017, Participation prize, Software competition, Korea National Open University</li>
+                                <li>Mar 2016, Grand prize, Airport service improvement proposal competition, Incheon International Airport</li>
+                                <li>Jan 2016, Selected company, Social Enterprise Grow-Up Program, Namdong-gu District Office (Incheon Metropolitan City)</li>
+                                <li>Sep 2014, Bronze prize, Polytechnic project competition, Korea Polytechnic 2 Incheon Colleage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 py-5">
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Study</h3>
+                            <ul class="unordered-list">
+                                <li>2020, Design and application of the IoT security threat pre-detection procedure based on power quality metering, Korea Society for Internet Information</li>
+                                <li>2016, A study on compress behavior information and compare similarity of malicious code via natural language processing, Korea Association of Information Systems</li>
+                                <li>2016, A study on enhance flash memory performance and digital evidence analysis using LKM in android devices, Korea Association of Information Systems</li>
+                                <li>2016, A study on finding correlation between IoT and signal intrusion, Korea Society of Computer Information</li>
+                                <li>2016, Attack of downloader vulnerability using SD card of Android, Korea Association of Information Systems</li>
+                                <li>2016, Classification and Allocation method of e-mail using possibility distribution and prediction, Korea Society of Computer Information</li>
+                                <li>2016, Event Inspection Technique for the advancement of Application Accessibility, Korean Institute of Communication Sciences</li>
+                                <li>2016, A Code Concealment Method using Java Reflection and Dynamic Loading in Android, Korea Institute of Information Security &amp; Cryptology</li>
+                                <li>2015, Java Automatic Identifier Renaming Technique and Protection Method, The Journal of the KICS</li>
+                                <li>2014, Code Obfuscation using Java Reflection and Exception in Android, Korea Society of Computer Information</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 py-5">
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Media</h3>
+                            <ul class="unordered-list">
+                                <li>Apr 2022, "The AsmNext Team in South Korea joined Bytecode Alliance", Boannews (Korean Security News)</li>
+                                <li>Sep 2019, "Exclusive Interview: Our future goal is we're going to part of a new standard of the web accessibility", IssueMaker</li>
+                                <li>Jun 2018, "KISA and NH Bank, Held the 'Fintech X Blockchain' hackathon", IT Chosun</li>
+                                <li>Jun 2016, "Incheon International Airport, Held the award for those who publish a proposal to improve airport service", Incheon Daily/Joongbu Daily</li>
+                                <li>Dec 2011, "The attacker launched the campaign to distribute malware on the digital camera forum website in South Korea", DailySecu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b-example-divider"></div>
+            <div class="container px-4 py-5" id="hanging-icons">
+                <h2 class="pb-2 border-bottom">Commercial projects</h2>
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Cloud serivces</h3>
+                            <p>Monitoring and receive a response over 200 servers with the legacy(Windows 2k3) ~ modern(Windows 10 and latest Linux) (2020)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i> LS Global, Inc.</span>
+                                <span><i class="bi bi-person"></i> Databean, Co., Ltd.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Chemical</h3>
+                            <p>Providing information suitable for mines, substrates and chemical properties for ceramics industry. (2019)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i> Korea Institute of Ceramic Engineering and Technology</span>
+                                <span><i class="bi bi-person"></i> Databean, Co., Ltd.</span>
+                            <p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Compliance</h3>
+                            <p>Counterstrike solution for companies and institutions to respond to DDA(Disability Discrimination Act) (2016)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i> Incheon International Airport</span>
+                                <span><i class="bi bi-person"></i> Namdong-gu District Office (Incheon)</span>
+                                <span><i class="bi bi-person"></i> Chunghyun Children Center (Incheon)</span>
+                                <span><i class="bi bi-person"></i> JSMGlobal, Inc. (Incheon)</span>
+                            <p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-hammer"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Filetypes</h3>
+                            <p>AI based experts system for file types including executable, non-executable, mobile apps, document, script, image, and unclassified file formats. (2005 ~ Now)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i> Korea Internet & Security Agency (KISA)</span>
+                                <span><i class="bi bi-person"></i> IBM Korea</span>
+                                <span><i class="bi bi-person"></i> Bioden</span>
+                                <span><i class="bi bi-person"></i> Wooricare</span>
+                                <span><i class="bi bi-person"></i> The Spot</span>
+                                <span><i class="bi bi-person"></i> Kangwon University</span>
+                                <span><i class="bi bi-person"></i> Incheon Information Industry</span>
+                                <span><i class="bi bi-person"></i> Korea Gas Corporation</span>
+                                <span><i class="bi bi-person"></i>  Incheon Metropolitan Police Agency</span>
+                            <p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-share"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">Blockchain</h3>
+                            <p>Developing with the Smart Contract, Bronze award, KISA-NHBank-TheLoop, Fintech X Blockchain Hackathon (2017~2019)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i> NH(Nonghyup) Bank</span>
+                                <span><i class="bi bi-person"></i> Korea Internet & Security Agency (KISA)</span>
+                                <span><i class="bi bi-person"></i> The Loop</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                            <i class="bi bi-house-door"></i>
+                        </div>
+                        <div>
+                            <h3 class="fs-2 text-body-emphasis">HR/Real Estate</h3>
+                            <p>Human Resource search, Real Estate search and brokerage solutions. (2009~2012)</p>
+                            <p>
+                                <span><i class="bi bi-person"></i>  Icheon Information</span>
+                            </p>
+                            <p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b-example-divider"></div>
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom">Join me</h2>
+                <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+                    <div class="col d-flex flex-column align-items-start gap-2">
+                        <h2 class="fw-bold text-body-emphasis">Join me.</h2>
+                        <p class="text-body-secondary">I am ready to dedicate all my experience to you.</p>
+                    </div>
+                    <div class="col">
+                        <div class="row row-cols-1 row-cols-sm-2 g-4">
+                            <div class="col d-flex flex-column gap-2">
+                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                    <i class="bi bi-chat-dots"></i>
+                                </div>
+                                <h4 class="fw-semibold mb-0 text-body-emphasis">Catswords Colosseum</h4>
+                                <p class="text-body-secondary">ActivityPub (Mastodon) based distributed social media service.</p>
+                                <p><a href="https://catswords.social" class="btn btn-primary">Join</a></p>
+                            </div>
+                            <div class="col d-flex flex-column gap-2">
+                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                    <i class="bi bi-microsoft-teams"></i>
+                                </div>
+                                <h4 class="fw-semibold mb-0 text-body-emphasis">Microsoft Teams</h4>
+                                <p class="text-body-secondary">I prefer Microsoft Teams as my communication channel.</p>
+                                <p><a href="https://teams.live.com/l/community/FEACHncAhq8ldnojAI" class="btn btn-primary">Join</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
